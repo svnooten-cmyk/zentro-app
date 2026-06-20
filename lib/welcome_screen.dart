@@ -37,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                   const Text(
                     'Welkom bij Zentro',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color(0xFF00D4FF),
                       fontSize: 34,
                       fontWeight: FontWeight.bold,
                     ),
@@ -58,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
 
                   SizedBox(
                     width: double.infinity,
-                    height: 60,
+                    height: 55,
                     child: ElevatedButton(
                       onPressed: () {},
                       child: const Text(
@@ -72,7 +72,7 @@ class WelcomeScreen extends StatelessWidget {
 
                   SizedBox(
                     width: double.infinity,
-                    height: 60,
+                    height: 55,
                     child: ElevatedButton(
                       onPressed: () {},
                       child: const Text(
