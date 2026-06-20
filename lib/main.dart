@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'welcome_screen.dart';
 
 void main() {
   runApp(const ZentroApp());
@@ -9,47 +10,10 @@ class ZentroApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Zentro',
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
- children: [
-  Image.asset(
-    'assets/zentro_logo.png',
-    width: 180,
-  ),
-
-  SizedBox(height: 20),
-
-  Text(
-    'Welkom bij Zentro',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Verhalen, reizen en ontmoetingen.',
-              ),
-              SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Login'),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Registreren'),
-              ),
-            ],
-          ),
-        ),
-        
-      ),
+      home: WelcomeScreen(),
     );
   }
 }
