@@ -13,9 +13,6 @@ class ZentroApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Zentro',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Zentro'),
-        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -51,6 +48,7 @@ class ZentroApp extends StatelessWidget {
             ],
           ),
         ),
+        
       ),
     );
   }
