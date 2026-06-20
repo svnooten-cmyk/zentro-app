@@ -19,9 +19,16 @@ class ZentroApp extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Welkom bij Zentro',
+ children: [
+  Image.asset(
+    'assets/zentro_logo.png',
+    width: 180,
+  ),
+
+  SizedBox(height: 20),
+
+  Text(
+    'Welkom bij Zentro',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
