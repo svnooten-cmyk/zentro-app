@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -21,67 +23,90 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
 
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/zentro_logo.png',
-                    width: 220,
-                  ),
+          SafeArea(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 430),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Column(
+                    children: [
+                      const Spacer(),
 
-                  const SizedBox(height: 40),
-
-                  const Text(
-                    'Welkom bij Zentro',
-                    style: TextStyle(
-                      color: Color(0xFF00D4FF),
-                      fontSize: 34,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  const SizedBox(height: 12),
-
-                  const Text(
-                    'Verhalen, reizen en ontmoeten.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 18,
-                    ),
-                  ),
-
-                  const SizedBox(height: 50),
-
-                  SizedBox(
-                    width: double.infinity,
-                    height: 55,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(fontSize: 20),
+                      SvgPicture.asset(
+                        'zentro_pin.svg',
+                        width: 95,
                       ),
-                    ),
-                  ),
 
-                  const SizedBox(height: 20),
+                      const SizedBox(height: 8),
 
-                  SizedBox(
-                    width: double.infinity,
-                    height: 55,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Registreren',
-                        style: TextStyle(fontSize: 20),
+                      SvgPicture.asset(
+                        'zentro_tekst.svg',
+                        width: 120,
                       ),
-                    ),
+
+                      const SizedBox(height: 35),
+
+                      const Text(
+                        'Welcome to Zentro',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Color(0xFF00D4FF),
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      const SizedBox(height: 12),
+
+                      const Text(
+                        'Stories, travel and connections.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 18,
+                        ),
+                      ),
+
+                      const SizedBox(height: 50),
+
+                      SizedBox(
+                        width: 280,
+                        height: 55,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginScreen(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Login',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      SizedBox(
+                        width: 280,
+                        height: 55,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Sign Up',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      ),
+
+                      const Spacer(),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),

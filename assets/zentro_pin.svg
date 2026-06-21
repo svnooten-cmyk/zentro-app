@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="900" viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pinGradient" x1="210" y1="780" x2="735" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7426ff"/>
+      <stop offset="45%" stop-color="#187cff"/>
+      <stop offset="100%" stop-color="#10f0e8"/>
+    </linearGradient>
+    <linearGradient id="zGradient" x1="320" y1="625" x2="635" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7426ff"/>
+      <stop offset="50%" stop-color="#187cff"/>
+      <stop offset="100%" stop-color="#10f0e8"/>
+    </linearGradient>
+  </defs>
+
+  <g id="zentro_pin">
+    <path d="M450 60 C290 60 160 190 160 350 C160 545 330 685 450 805 C570 685 740 545 740 350 C740 190 610 60 450 60Z"
+          fill="url(#pinGradient)"/>
+
+    <path d="M450 125 C325 125 225 225 225 350 C225 430 265 505 322 570 L450 700 L578 570 C635 505 675 430 675 350 C675 225 575 125 450 125Z"
+          fill="#02091d"/>
+
+    <path d="M215 455 C280 360 365 325 450 325 C535 325 620 360 685 455 L655 525 C610 445 535 415 450 415 C365 415 290 445 245 525Z"
+          fill="url(#pinGradient)"/>
+
+    <circle cx="325" cy="285" r="44" fill="url(#pinGradient)"/>
+    <circle cx="450" cy="255" r="55" fill="url(#pinGradient)"/>
+    <circle cx="575" cy="285" r="44" fill="url(#pinGradient)"/>
+
+    <path d="M350 410 L570 410 Q594 410 575 430 L430 575 L560 575 Q585 575 562 595 L365 595 Q337 595 358 570 L500 435 L350 435 Q325 435 350 410Z"
+          fill="url(#zGradient)"/>
+  </g>
+</svg>
