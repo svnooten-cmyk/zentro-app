@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'login_screen.dart';
+import 'signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -16,13 +17,9 @@ class WelcomeScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-
           Positioned.fill(
-            child: Container(
-              color: Colors.black54,
-            ),
+            child: Container(color: Colors.black54),
           ),
-
           SafeArea(
             child: Center(
               child: ConstrainedBox(
@@ -32,21 +29,10 @@ class WelcomeScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       const Spacer(),
-
-                      SvgPicture.asset(
-                        'zentro_pin.svg',
-                        width: 95,
-                      ),
-
+                      SvgPicture.asset('zentro_pin.svg', width: 95),
                       const SizedBox(height: 8),
-
-                      SvgPicture.asset(
-                        'zentro_tekst.svg',
-                        width: 120,
-                      ),
-
+                      SvgPicture.asset('zentro_tekst.svg', width: 120),
                       const SizedBox(height: 35),
-
                       const Text(
                         'Welcome to Zentro',
                         textAlign: TextAlign.center,
@@ -56,9 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       const SizedBox(height: 12),
-
                       const Text(
                         'Stories, travel and connections.',
                         textAlign: TextAlign.center,
@@ -67,9 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                           fontSize: 18,
                         ),
                       ),
-
                       const SizedBox(height: 50),
-
                       SizedBox(
                         width: 280,
                         height: 55,
@@ -82,27 +64,25 @@ class WelcomeScreen extends StatelessWidget {
                               ),
                             );
                           },
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(fontSize: 20),
-                          ),
+                          child: const Text('Login', style: TextStyle(fontSize: 20)),
                         ),
                       ),
-
                       const SizedBox(height: 20),
-
                       SizedBox(
                         width: 280,
                         height: 55,
                         child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Sign Up',
-                            style: TextStyle(fontSize: 20),
-                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignupScreen(),
+                              ),
+                            );
+                          },
+                          child: const Text('Sign Up', style: TextStyle(fontSize: 20)),
                         ),
                       ),
-
                       const Spacer(),
                     ],
                   ),

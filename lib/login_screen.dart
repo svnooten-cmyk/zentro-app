@@ -15,13 +15,9 @@ class LoginScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-
           Positioned.fill(
-            child: Container(
-              color: Colors.black54,
-            ),
+            child: Container(color: Colors.black54),
           ),
-
           SafeArea(
             child: Center(
               child: ConstrainedBox(
@@ -33,9 +29,7 @@ class LoginScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
+                          onPressed: () => Navigator.pop(context),
                           icon: const Icon(
                             Icons.arrow_back_ios_new,
                             color: Colors.white,
@@ -43,23 +37,11 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-
                       const Spacer(),
-
-                      SvgPicture.asset(
-                        'zentro_pin.svg',
-                        width: 95,
-                      ),
-
+                      SvgPicture.asset('zentro_pin.svg', width: 95),
                       const SizedBox(height: 8),
-
-                      SvgPicture.asset(
-                        'zentro_tekst.svg',
-                        width: 120,
-                      ),
-
+                      SvgPicture.asset('zentro_tekst.svg', width: 120),
                       const SizedBox(height: 35),
-
                       const Text(
                         'Welcome Back',
                         textAlign: TextAlign.center,
@@ -69,85 +51,34 @@ class LoginScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       const SizedBox(height: 30),
-
-                      TextField(
-                        style: const TextStyle(
-                          color: Colors.white,
-                        ),
-                        decoration: InputDecoration(
-                          prefixIcon: const Icon(
-                            Icons.email_outlined,
-                            color: Color(0xFF00D4FF),
-                          ),
-                          hintText: 'Email Address',
-                          hintStyle: const TextStyle(
-                            color: Colors.white70,
-                          ),
-                          filled: true,
-                          fillColor: Colors.white12,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18),
-                            borderSide: BorderSide.none,
-                          ),
-                        ),
+                      _ZentroTextField(
+                        icon: Icons.email_outlined,
+                        hint: 'Email Address',
                       ),
-
                       const SizedBox(height: 18),
-
-                      TextField(
+                      _ZentroTextField(
+                        icon: Icons.lock_outline,
+                        hint: 'Password',
                         obscureText: true,
-                        style: const TextStyle(
-                          color: Colors.white,
-                        ),
-                        decoration: InputDecoration(
-                          prefixIcon: const Icon(
-                            Icons.lock_outline,
-                            color: Color(0xFF00D4FF),
-                          ),
-                          hintText: 'Password',
-                          hintStyle: const TextStyle(
-                            color: Colors.white70,
-                          ),
-                          filled: true,
-                          fillColor: Colors.white12,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(18),
-                            borderSide: BorderSide.none,
-                          ),
-                        ),
                       ),
-
                       const SizedBox(height: 30),
-
                       SizedBox(
                         width: 280,
                         height: 55,
                         child: ElevatedButton(
                           onPressed: () {},
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          ),
+                          child: const Text('Login', style: TextStyle(fontSize: 20)),
                         ),
                       ),
-
                       const SizedBox(height: 18),
-
                       TextButton(
                         onPressed: () {},
                         child: const Text(
                           'Forgot Password?',
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 16,
-                          ),
+                          style: TextStyle(color: Colors.white70, fontSize: 16),
                         ),
                       ),
-
                       const Spacer(),
                     ],
                   ),
@@ -156,6 +87,41 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _ZentroTextField extends StatelessWidget {
+  final IconData icon;
+  final String hint;
+  final bool obscureText;
+
+  const _ZentroTextField({
+    required this.icon,
+    required this.hint,
+    this.obscureText = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 280,
+      height: 55,
+      child: TextField(
+        obscureText: obscureText,
+        style: const TextStyle(color: Colors.white),
+        decoration: InputDecoration(
+          prefixIcon: Icon(icon, color: const Color(0xFF00D4FF)),
+          hintText: hint,
+          hintStyle: const TextStyle(color: Colors.white70),
+          filled: true,
+          fillColor: Colors.white12,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(18),
+            borderSide: BorderSide.none,
+          ),
+        ),
       ),
     );
   }
